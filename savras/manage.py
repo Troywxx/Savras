@@ -5,7 +5,7 @@ manager = Manager(app) #把app传给Manager对象，以初始化Flask Script
 
 @manager.shell
 def make_shell_context():
-    return dict(app=app, db=db, User=User, Post=Post, Comment=Comment, Tag=Tag)
+    return dict(app=app)
 #make_shell_context函数会创建一个Python命令行，并在应用上下文中执行，返回的字典会告诉Flask Script在打开命令行时进行一些默认的导入工作
 #一些Flask扩展只有在Flask应用对象被创建之后才会被初始化
 
