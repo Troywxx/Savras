@@ -42,5 +42,7 @@ nosetests.xml
 .cache/
 .vscode
 .python-version
+
 Pipfile
 Pipfile.lock
+*.db
