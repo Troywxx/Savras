@@ -1,9 +1,11 @@
-from flask import Flask
+from flask import Flask, render_template
 from config import DevConfig
 from flask_sqlalchemy import SQLAlchemy
+from flask_bootstrap import Bootstrap
 
 app = Flask(__name__)
 app.config.from_object(DevConfig)
+bootstrap = Bootstrap(app)
 db = SQLAlchemy(app)
 
 class Task(db.Model):
@@ -21,7 +23,7 @@ class Task(db.Model):
 
 @app.route('/')
 def home():
-    return '<h>Hello World!</h>'
+    return render_template('base.html')
 
 if __name__ == '__main__':
     app.run() 
